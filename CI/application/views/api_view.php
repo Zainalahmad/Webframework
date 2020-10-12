@@ -1,5 +1,6 @@
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>Web FrameWork</title>    
 	<script src="<?php echo base_url('asset/jquery.min.js') ?>"></script>
 	<link rel="stylesheet" href="<?php echo base_url('asset/icon.css') ?>" />
