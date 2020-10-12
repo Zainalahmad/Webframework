@@ -16,7 +16,7 @@ class Test_api extends CI_Controller
 		if ($this->input-> post('data_action')){
 			$data_action=$this->input-> post('data_action');
 			if ($data_action=="Delete") {
-				$api_url="http://localhost/CI/api/delete";
+				$api_url="http://localhost/Webframework/CI/api/delete";
 				$form_data = array ('nim' => $this->input-> post('nim'));
 				$client=curl_init($api_url);
 				curl_setopt($client, CURLOPT_POST, true);
@@ -27,7 +27,7 @@ class Test_api extends CI_Controller
 				echo $response;
 			}
 			if ($data_action=="Edit"){
-				$api_url="http://localhost/CI/api/update";
+				$api_url="http://localhost/Webframework/CI/api/update";
 				$form_data = array ('nim' => $this->input-> post('nim'),
 									'nama' => $this->input-> post('nama'));
 				$client=curl_init($api_url);
@@ -39,7 +39,7 @@ class Test_api extends CI_Controller
 				echo $response;
 			}
 			if ($data_action=="fetch_single"){
-				$api_url="http://localhost/CI/api/fetch_single";
+				$api_url="http://localhost/Webframework/CI/api/fetch_single";
 				$form_data = array ('nim' => $this->input-> post('nim'));
 				$client=curl_init($api_url);
 				curl_setopt($client, CURLOPT_POST, true);
@@ -50,7 +50,7 @@ class Test_api extends CI_Controller
 				echo $response;
 			}
 			if ($data_action=="Insert"){
-				$api_url="http://localhost/CI/api/insert";
+				$api_url="http://localhost/Webframework/CI/api/insert";
 				$form_data = array ('nim' => $this->input-> post('nim'),
 									'nama' => $this->input-> post('nama'));
 				$client=curl_init($api_url);
@@ -62,7 +62,7 @@ class Test_api extends CI_Controller
 				echo $response;
 			}
 			if ($data_action=="fetch_all"){
-				$api_url="http://localhost/CI/api";
+				$api_url="http://localhost/Webframework/CI/api";
 				$client=curl_init($api_url);
 				curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
 				$response=curl_exec($client);
@@ -78,7 +78,7 @@ class Test_api extends CI_Controller
 							<td><button type="button" name="edit" class="btn btn-warning edit" id="'.
 									$row->nim.'"><i class="material-icons"
 									style="font-size:15px">edit</i></button></td>
-							<td><button type="button" name="delete class="btn-danger delete"
+							<td><button type="button" name="delete" class="btn-danger delete"
 									id="'.$row->nim.'"><i class="material-icons"
 									style="font-size:15px">delete</i></button></td>
 						</tr>
