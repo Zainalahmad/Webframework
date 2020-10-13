@@ -78,7 +78,10 @@
 </div>
 <script type="text/javascript" language="javascript" >$(document).ready(function()
 	{function fetch_data(){$.ajax({
-		url:"<?php echo base_url(); ?>test_api/action",method:"POST",data:{data_action:'fetch_all'},success:function(data){
+		url:"<?php echo base_url(); ?>test_api/action",
+		method:"POST",
+		data:{data_action:'fetch_all'},
+		success:function(data){
 			$('tbody').html(data);
 		}});}
 
@@ -89,7 +92,7 @@
 		$('#action').val('Add');
 		$('#data_action').val("Insert");
 		$('#userModal').modal('show');});
-	$(document).on('submit', '#user_form', function(event){event.preventDefault();$.ajax({url:"<?php echo base_url() . 'test_api/action' ?>",method:"POST",data:
+	$(document).on('submit', '#user_form', function(event){event.preventDefault();$.ajax({url:"<?php echo base_url() . 'api/insert' ?>",method:"POST",data:
 		$(this).serialize(),dataType:"json",success:function(data){
 			if(data.success){
 				$('#user_form')[0].reset();
