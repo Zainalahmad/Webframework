@@ -1,7 +1,7 @@
 <?php
 class Api_model extends CI_Model
 {
-	funvtion fetch_all()
+	function fetch_all()
 	{
 		$this->db->order_by('nim','DESC');
 		return $this->db->get('tbl_nama');
